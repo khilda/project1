@@ -9,3 +9,7 @@
 "/" : element
 
 "/email" : email layout page
+
+# History
+
+- 11.12 : init 및 일부 레이아웃 작업
