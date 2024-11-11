@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* ----------------------------------------------------------
+	# Font face
+---------------------------------------------------------- */
+@mixin fontFace($name, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: "#{$name}";
+    src: local("#{$file}"), url("../fonts/#{$file}.ttf") format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+    @content;
+  }
+}
+// 기본폰트
+@include fontFace("lg", "LGSmartLight", 300);
+@include fontFace("lg", "LGSmartRegular", 400);
+// @include fontFace("lg", "LGSmartRegularItalic", 400, "italic");
+@include fontFace("lg", "LGSmartSemiBold", 500);
+@include fontFace("lg", "LGSmartBold", 600);
+// @include fontFace("lg", "LGSmartBoldItalic", 600, "italic");

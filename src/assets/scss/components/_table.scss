@@ -1,0 +1,14 @@
+.table {
+  border-top: 1px solid $c-light-gray3;
+  width: 100%;
+  th {
+    background-color: $c-light-gray1;
+    text-align: left;
+  }
+  th,
+  td {
+    border-bottom: 1px solid $c-light-gray3;
+    padding: 14px;
+    vertical-align: middle;
+  }
+}

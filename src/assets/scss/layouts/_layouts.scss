@@ -1,0 +1,41 @@
+.l-wrapper {
+  padding: 24px;
+  height: 100vh;
+}
+.l-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  height: calc(100vh - 132px);
+  & + .btn-wrap {
+    margin-top: 20px;
+  }
+}
+.l-section {
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+//************************************
+//# content-group
+//************************************
+.content-group {
+  display: flex;
+  flex-direction: column;
+  .group-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .group-contents {
+    flex: 1;
+    background-color: $c-white;
+    border-radius: 7px;
+    padding: 14px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  & + .content-group {
+    margin-top: 24px;
+  }
+}

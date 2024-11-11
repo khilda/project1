@@ -1,0 +1,182 @@
+//************************************
+//# text eillipse
+//************************************
+@mixin ellipsis($line-cnt: 1) {
+  @if ($line-cnt == 1) {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-cnt; /* 라인수 */
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+//************************************
+//# hide font
+//************************************
+@mixin hidden-txt {
+  font-size: 0;
+  color: transparent;
+  @content;
+}
+//************************************
+//# icon
+//************************************
+@mixin before-icon {
+  content: "";
+  display: block;
+  background: transparent no-repeat 50% 50% / cover;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+@mixin plantImg($type) {
+  background-image: url("../images/img_star_#{$type}.png");
+}
+//************************************
+//# Arrow
+//************************************
+@mixin line-arrow($size: 12px) {
+  display: block;
+  border-right: 2px solid $c-primary;
+  border-bottom: 2px solid $c-primary;
+  transform: rotate(-45deg);
+  width: $size;
+  height: $size;
+  animation-name: animate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotate(-45deg) translate(-10px, -10px);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(-45deg) translate(0, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(-45deg) translate(0, 0);
+    }
+  }
+}
+
+@mixin fill-arrow($size: 6px, $dir: down) {
+  display: block;
+  border: $size solid transparent;
+  border-radius: calc($size/2);
+  @if ($dir == down) {
+    border-bottom-color: $c-primary;
+    border-left-color: $c-primary;
+  } @else {
+    border-bottom-color: $c-primary;
+    border-right-color: $c-primary;
+  }
+  width: 11px;
+  height: 11px;
+  transform: rotate(-45deg);
+  animation-name: $dir;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  @keyframes down {
+    to {
+      opacity: 0;
+      transform: translateY(10px) rotate(-45deg);
+    }
+  }
+  @keyframes right {
+    0% {
+      opacity: 0;
+      transform: rotate(-45deg) translate(-10px, -10px);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(-45deg) translate(0, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(-45deg) translate(0, 0);
+    }
+  }
+}
+@mixin mouse-wheel {
+  display: block;
+  width: 20px;
+  height: 30px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  border-radius: 60px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 1.5s infinite;
+    -webkit-animation: wheel 1.5s infinite;
+  }
+  @keyframes wheel {
+    to {
+      opacity: 0;
+      top: 20px;
+    }
+  }
+}
+//************************************
+//# 미디어 쿼리
+//************************************
+$w-mobile: 375px; // 375 ~ 720
+$w-tablet: 721px; // 721 ~ 1179
+$w-desktop: 1180px; // 1180 ~
+@mixin desktop-only {
+  @media (min-width: ($w-desktop)) {
+    @content;
+  }
+}
+@mixin desktop-tablet {
+  @media (min-width: $w-tablet) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: ($w-desktop)) {
+    @content;
+  }
+}
+@mixin tablet-only {
+  @media (min-width: $w-tablet) and (max-width: ($w-desktop - 1)) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: ($w-tablet - 1)) {
+    @content;
+  }
+}
+
+//************************************
+//#
+//************************************
+@mixin transform($property) {
+  transform: $property;
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-trasform: $property;
+}
+
+@mixin transition($property) {
+  transition: $property;
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -ms-transition: $property;
+}
