@@ -1,9 +1,6 @@
 .l-email {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
   background-color: $c-white;
-  border-radius: 7px;
   padding: 14px;
 }
 .email-view {
@@ -68,25 +65,10 @@
   flex-direction: column;
   border-radius: 7px;
   overflow: hidden;
-}
-.qna-header {
-  background-color: $c-white;
-  padding: 21px 14px;
-  font-size: 20px;
-}
-.qna-contents {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: $c-light-gray1;
-  padding: 18px;
-  .type-table {
-    flex: 1 1 auto;
-    height: 230px;
-  }
   .type-solution {
-    flex: 1 1 auto;
-    height: 380px;
+    .group-contents {
+      max-height: calc(100vh - 585px);
+    }
   }
 }
 //************************************
@@ -99,12 +81,72 @@
 //# Chat
 //************************************
 .chat-view {
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .btn-toggle {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .section-body {
+    height: calc(100% - 62px);
+  }
   .chat-contents {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     border-radius: 7px;
-    background-color: $c-white;
-    padding: 18px;
+  }
+  .chat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .chat-text {
+      border-radius: 7px;
+      padding: 14px;
+      color: $c-mid-gray2;
+    }
+    &.type-receive {
+      .chat-text {
+        align-self: flex-start;
+        background-color: $c-white;
+      }
+      .chat-info {
+        justify-content: flex-start;
+      }
+    }
+    &.type-send {
+      .chat-text {
+        align-self: flex-end;
+        background-color: $c-light-gray3;
+        text-align: right;
+      }
+      .chat-info {
+        justify-content: flex-end;
+      }
+    }
+    .chat-info {
+      display: flex;
+      gap: 4px;
+      .date {
+        color: $c-mid-gray1;
+      }
+    }
   }
   .chat-ipt {
     margin-top: 12px;
+  }
+  // open
+  &.is-open {
+    position: absolute;
+    top: 0;
   }
 }

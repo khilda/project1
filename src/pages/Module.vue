@@ -5,7 +5,7 @@
   </div>
   <div class="guide-box">
     <div class="title-h3">Agent Question</div>
-    <Question />
+    <ChatView />
   </div>
   <div class="guide-box">
     <div class="title-h3">Product Infomation</div>
@@ -24,7 +24,7 @@
 import ElButton from "@/components/elements/Button.vue";
 import EmailView from "@/components/module/EmailView.vue";
 import QnAView from "@/components/module/QnAView.vue";
-import Question from "@/components/module/Question.vue";
+import ChatView from "@/components/module/ChatView.vue";
 import AIRecommendView from "@/components/module/AIRecommendView.vue";
 </script>
 

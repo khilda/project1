@@ -60,5 +60,7 @@ input:autofill {
 //# scroll
 //************************************
 .scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
   @include scroll();
 }

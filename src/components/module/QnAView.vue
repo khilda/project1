@@ -4,34 +4,7 @@
     <div class="section-body">
       <div class="content-group type-table">
         <h3 class="group-title">Symptom Type</h3>
-        <div class="group-contents scroll">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Symptom</th>
-                <th>Sub Symprom1</th>
-                <th>Sub Symprom2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>REF</td>
-                <td>Door Issues</td>
-                <td>Lorem ipsum dolor,</td>
-              </tr>
-              <tr>
-                <td>REF</td>
-                <td>Door Issues</td>
-                <td>Lorem ipsum dolor,</td>
-              </tr>
-              <tr>
-                <td>REF</td>
-                <td>Door Issues</td>
-                <td>Lorem ipsum dolor,</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ul class="group-contents scroll"></ul>
       </div>
       <div class="content-group type-solution">
         <h3 class="group-title">Symptom Solution</h3>

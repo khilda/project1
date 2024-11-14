@@ -30,6 +30,35 @@
   <div class="guide-box">
     <h3 class="sub-h2">select</h3>
   </div>
+  <div class="guide-box">
+    <h3 class="sub-h2">table</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Symptom</th>
+          <th>Sub Symprom1</th>
+          <th>Sub Symprom2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>REF</td>
+          <td>Door Issues</td>
+          <td>Lorem ipsum dolor,</td>
+        </tr>
+        <tr>
+          <td>REF</td>
+          <td>Door Issues</td>
+          <td>Lorem ipsum dolor,</td>
+        </tr>
+        <tr>
+          <td>REF</td>
+          <td>Door Issues</td>
+          <td>Lorem ipsum dolor,</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script setup>
