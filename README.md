@@ -1,5 +1,15 @@
-# Vue 3 + Vite
+# SCSS 버전고정
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+```json
+"sass": "1.77.8",
+```
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+# Router
+
+"/" : element
+
+"/email" : email layout page
+
+# History
+
+- 11.12 : init 및 일부 레이아웃 작업

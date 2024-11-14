@@ -11,12 +11,13 @@
       <button
         v-if="isSearch"
         type="button"
-        class="ipt-btn"
+        class="ipt-search-btn"
         :disabled="disabled"
         @click="$emit('click-search', $event)"
       >
         검색
       </button>
+      <slot />
     </div>
     <p v-if="isInvalid" class="ipt-desc">text</p>
   </div>

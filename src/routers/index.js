@@ -10,5 +10,9 @@ export default createRouter({
       path: "/email",
       component: () => import("@/pages/EmailPage.vue"),
     },
+    {
+      path: "/module",
+      component: () => import("@/pages/Module.vue"),
+    },
   ],
 });

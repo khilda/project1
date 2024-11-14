@@ -1,17 +1,9 @@
 <template>
   <article class="l-section recommend-view">
-    <header class="recommend-header">AI Recommendation</header>
-    <div class="recommend-body">
-      <div class="body-contents">
-        <div class="result">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ea
-          nobis eveniet libero, nisi dolor repellat nam molestias, fugiat quo
-          tenetur repudiandae quod incidunt quaerat eos alias culpa aspernatur
-          facilis.
-        </div>
-        <div class="ai-ipt">
-          <ElInput v-model="input" />
-        </div>
+    <header class="section-header">AI Recommendation</header>
+    <div class="section-body">
+      <div class="textarea-view">
+        <textarea class="textarea" v-model="textarea"></textarea>
       </div>
     </div>
   </article>
@@ -19,8 +11,7 @@
 
 <script setup>
 import { ref } from "vue";
-import ElInput from "../elements/Input.vue";
-const input = ref("");
+const textarea = ref("");
 </script>
 
 <style></style>

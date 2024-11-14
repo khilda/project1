@@ -180,3 +180,22 @@ $w-desktop: 1180px; // 1180 ~
   -moz-transition: $property;
   -ms-transition: $property;
 }
+
+//************************************
+//# scroll
+//************************************
+@mixin scroll {
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $c-white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $c-mid-gray2;
+    border-radius: 8px;
+    border: 4px solid $c-white;
+  }
+}

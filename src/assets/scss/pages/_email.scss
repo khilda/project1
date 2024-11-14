@@ -43,26 +43,6 @@
   padding: 14px;
 }
 //************************************
-//# textarea
-//************************************
-.textarea-view {
-  flex: 1;
-  border-radius: 10px;
-  border: 1px solid $c-mid-gray1;
-  overflow: hidden;
-  .textarea-header {
-    background-color: #d9d9d9;
-    padding: 11px 0;
-    text-align: center;
-  }
-  .textarea {
-    width: 100%;
-    height: 100%;
-    padding: 12px;
-    color: $c-mid-gray2;
-  }
-}
-//************************************
 //# btn-wrap
 //************************************
 .btn-wrap {
@@ -113,30 +93,18 @@
 //# recommend
 //************************************
 .recommend-view {
-  display: flex;
-  flex-direction: column;
-  border-radius: 7px;
   overflow: hidden;
 }
-.recommend-header {
-  background-color: $c-white;
-  padding: 21px 14px;
-  font-size: 20px;
-}
-.recommend-body {
-  flex: 1;
-  display: flex;
-  background-color: $c-light-gray1;
-  padding: 18px;
-  .body-contents {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: $c-white;
+//************************************
+//# Chat
+//************************************
+.chat-view {
+  .chat-contents {
     border-radius: 7px;
-    padding: 14px;
+    background-color: $c-white;
+    padding: 18px;
   }
-  .result {
-    flex: 1;
+  .chat-ipt {
+    margin-top: 12px;
   }
 }

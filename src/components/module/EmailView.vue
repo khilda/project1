@@ -20,13 +20,14 @@
       </div>
     </article>
     <!-- 텍스트 입력 부분 -->
-    <div class="textarea-view">
+    <!-- (11/14) 디자인 삭제 -->
+    <!-- <div class="textarea-view">
       <header class="textarea-header">ICON AREA</header>
       <textarea class="textarea"></textarea>
     </div>
     <div class="btn-wrap align-right">
       <ElButton type="primary" @click="clickBtnHandler">Send Reply</ElButton>
-    </div>
+    </div> -->
   </section>
 </template>
 

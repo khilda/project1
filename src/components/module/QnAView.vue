@@ -1,7 +1,7 @@
 <template>
-  <article class="qna-view">
-    <header class="qna-header">AI Q&A</header>
-    <div class="qna-contents">
+  <article class="l-section qna-view">
+    <header class="section-header">AI Q&A</header>
+    <div class="section-body">
       <div class="content-group type-table">
         <h3 class="group-title">Symptom Type</h3>
         <div class="group-contents scroll">
