@@ -1,28 +1,6 @@
-@mixin base-ipt {
-  border: 1px solid $c-mid-gray1;
-  border-radius: 10px;
-  background-color: $c-white;
-  padding: 11px 12px;
-  color: $c-mid-gray2;
-  &:focus {
-    border-color: $c-black;
-    color: $c-black;
-  }
-  &:disabled {
-    border-color: $c-mid-gray1;
-    color: $c-mid-gray1;
-    cursor: default;
-  }
-  &.is-invalid {
-    border-color: $c-primary-red;
-    color: $c-black;
-  }
-}
-
-.select {
-  @include base-ipt();
-}
-
+//************************************
+//# input
+//************************************
 .ipt-box {
   display: flex;
   align-items: center;
@@ -62,6 +40,10 @@
     .ipt {
       cursor: default;
     }
+    .ipt-btn-search {
+      background-color: rgba(255, 255, 255, 0.6);
+      background-blend-mode: lighten;
+    }
   }
 }
 .el-ipt {
@@ -88,6 +70,10 @@
     color: transparent;
     cursor: pointer;
   }
+  &:disabled {
+    background-color: rgba(255, 255, 255, 0.6);
+    background-blend-mode: lighten;
+  }
   // placeholder
   &:not(:valid) {
     &::before {
@@ -101,6 +87,95 @@
       -webkit-appearance: none;
       display: none;
     }
+  }
+}
+//************************************
+//# select
+//************************************
+.el-select {
+  position: relative;
+  width: 100%;
+  .select-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid $c-mid-gray1;
+    border-radius: 10px;
+    background-color: $c-white;
+    width: 100%;
+    padding: 11px 12px;
+    color: $c-mid-gray2;
+    .select-value {
+      flex: 1;
+      @include ellipsis();
+    }
+    .ico-select {
+      flex: none;
+      background: url("/src/assets/img/ico_select.svg") no-repeat 50% 50%;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    &:focus {
+      border-color: $c-black;
+      color: $c-black;
+    }
+    &:disabled {
+      border-color: $c-mid-gray1;
+      color: $c-mid-gray1;
+      cursor: default;
+      .ico-select {
+        opacity: 0.3;
+      }
+    }
+  }
+  .ico-check-red {
+    flex: none;
+    background: url("/src/assets/img/ico_check_red.svg") no-repeat 50% 50%;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .select-option {
+    display: none;
+    position: absolute;
+    top: 50px;
+    border: 1px solid $c-mid-gray1;
+    border-radius: 10px;
+    background-color: $c-white;
+    width: 100%;
+    z-index: 10;
+    .option-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      color: $c-mid-gray2;
+      .option-label {
+        flex: 1;
+        margin-right: auto;
+        color: inherit;
+        @include ellipsis();
+      }
+      &:hover,
+      &.is-selected {
+        background-color: $c-light-gray1;
+        color: $c-dark-gray3;
+      }
+    }
+  }
+  &.is-open {
+    .ico-select {
+      transform: rotate(180deg);
+    }
+    .select-option {
+      display: block;
+    }
+  }
+  &.is-invalid {
+    border-color: $c-primary-red;
+    color: $c-black;
   }
 }
 //************************************

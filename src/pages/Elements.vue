@@ -29,6 +29,7 @@
   </div>
   <div class="guide-box">
     <h3 class="sub-h2">Select</h3>
+    <ElSelect v-model="select" :options="options" />
   </div>
   <div class="guide-box">
     <h3 class="sub-h2">Checkbox:: {{ checkbox }}</h3>
@@ -93,11 +94,19 @@
 import { onMounted, ref } from "vue";
 import ElButton from "@/components/elements/Button.vue";
 import ElInput from "@/components/elements/Input.vue";
+import ElSelect from "@/components/elements/Select.vue";
 import ElCheckbox from "@/components/elements/Checkbox.vue";
 import ElRadio from "@/components/elements/Radio.vue";
 import { useGenerateId } from "@/composable/generateID";
 
 const input1 = ref("");
+const select = ref("");
+const options = [
+  { label: "label1", value: "1" },
+  { label: "label2", value: "2" },
+  { label: "label3", value: "3" },
+  { label: "label4", value: "4" },
+];
 
 const checkbox = ref(["1"]);
 const checkboxName = ref("");

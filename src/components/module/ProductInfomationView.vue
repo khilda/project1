@@ -64,7 +64,7 @@
       <div class="row">
         <h5 class="body-h3">Warranty In/Out</h5>
         <div class="col">
-          <ElInput v-model="input5" />
+          <ElSelect v-model="select" :options="options" />
           <ElButton type="form" disabled>A</ElButton>
           <ElButton type="form" disabled>P</ElButton>
         </div>
@@ -81,6 +81,7 @@
 import { ref } from "vue";
 import ElButton from "@/components/elements/Button.vue";
 import ElInput from "@/components/elements/Input.vue";
+import ElSelect from "@/components/elements/Select.vue";
 import ElCalendar from "@/components/elements/Calendar.vue";
 import ElScrollList from "@/components/elements/ScrollList.vue";
 const input1 = ref("");
@@ -88,7 +89,13 @@ const date = ref("");
 const input2 = ref("");
 const input3 = ref("");
 const input4 = ref("");
-const input5 = ref("");
+const select = ref("");
+const options = [
+  { label: "label1", value: "1" },
+  { label: "label2", value: "2" },
+  { label: "label3", value: "3" },
+  { label: "label4", value: "4" },
+];
 
 const isOpen = ref(false);
 function clickToggleHandler() {
