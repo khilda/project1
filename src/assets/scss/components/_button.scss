@@ -31,3 +31,23 @@
   padding: 19px 28px;
   font-size: 24px;
 }
+
+//************************************
+//# form Button
+//************************************
+.type-form {
+  border-radius: 10px;
+}
+
+//************************************
+//# Layout Toggle Button
+//************************************
+.btn-toggle {
+  background: url("/src/assets/img/ico_btn_toggle_down.svg") no-repeat 50% 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+}
+.is-open .btn-toggle {
+  transform: rotate(180deg);
+}

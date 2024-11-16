@@ -33,14 +33,15 @@
   color: $c-mid-gray2;
   .ipt {
     flex: 1;
+    width: 100%;
     padding: 11px 10px 11px 0;
     color: inherit;
     &:focus {
       outline: 0 none;
     }
   }
-  .ipt-search-btn {
-    background-color: #f00;
+  .ipt-btn-search {
+    background: url("/src/assets/img/ico_search.svg") no-repeat 50% 50%;
     flex: none;
     width: 20px;
     height: 20px;
@@ -65,12 +66,43 @@
 }
 .el-ipt {
   position: relative;
+  width: 100%;
   .ipt-desc {
     line-height: 18px;
     color: $c-primary-red;
   }
 }
-
+//************************************
+//# Calendar type="date"
+//************************************
+.ipt[type="date"] {
+  position: relative;
+  background: url("/src/assets/img/ico_calendar.svg") no-repeat right center;
+  &::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+  // placeholder
+  &:not(:valid) {
+    &::before {
+      content: attr(placeholder);
+      width: 100%;
+      height: 100%;
+      line-height: 18px;
+      color: #969696;
+    }
+    &::-webkit-datetime-edit {
+      -webkit-appearance: none;
+      display: none;
+    }
+  }
+}
 //************************************
 //# textarea
 //************************************
@@ -94,5 +126,107 @@
     padding: 12px;
     color: $c-mid-gray2;
     @include scroll;
+  }
+}
+
+//************************************
+//# Radio
+//************************************
+.el-radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  .radio {
+    flex: 0 0 auto;
+    position: relative;
+    border: 1px solid $c-black;
+    border-radius: 50%;
+    background-color: $c-white;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    cursor: inherit;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+    }
+    &:checked {
+      border-width: 2px;
+      border-color: $c-primary-red;
+      &::before {
+        background-color: $c-primary-red;
+      }
+    }
+  }
+  label {
+    cursor: inherit;
+  }
+  &.is-disabled {
+    cursor: default;
+    .radio {
+      border-color: $c-mid-gray1;
+      background-color: $c-light-gray3;
+      color: $c-mid-gray1;
+    }
+    label {
+      color: $c-mid-gray1;
+    }
+  }
+}
+//************************************
+//# checkbox
+//************************************
+.el-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  .checkbox {
+    flex: 0 0 auto;
+    position: relative;
+    border: 1px solid $c-black;
+    border-radius: 6px;
+    background-color: $c-white;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    cursor: inherit;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: -1px;
+      background: url("/src/assets/img/ico_checkbox.svg") no-repeat 50% 50%;
+      width: 20px;
+      height: 20px;
+    }
+    &:checked {
+      border-color: $c-primary-red;
+      &::before {
+        background-color: $c-primary-red;
+      }
+    }
+  }
+  label {
+    cursor: inherit;
+  }
+  &.is-disabled {
+    cursor: default;
+    .checkbox {
+      border-color: $c-mid-gray1;
+      color: $c-mid-gray1;
+    }
+    label {
+      color: $c-mid-gray1;
+    }
   }
 }

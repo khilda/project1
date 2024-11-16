@@ -15,11 +15,11 @@ import { computed } from "vue";
 
 const props = defineProps({
   type: {
-    type: String, // '' | 'primary'
+    type: String, // 'default' | 'primary' | 'form'
     default: "default",
   },
   size: {
-    type: String, // '' | 'md' | 'lg'
+    type: String, // 'default' | 'md' | 'lg'
     default: "default",
   },
   disabled: {
@@ -32,6 +32,7 @@ defineEmits(["click"]);
 const type = {
   default: "",
   primary: "type-primary",
+  form: "type-form",
 };
 const size = {
   default: "",

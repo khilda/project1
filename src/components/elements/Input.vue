@@ -11,7 +11,7 @@
       <button
         v-if="isSearch"
         type="button"
-        class="ipt-search-btn"
+        class="ipt-btn-search"
         :disabled="disabled"
         @click="$emit('click-search', $event)"
       >
@@ -19,7 +19,7 @@
       </button>
       <slot />
     </div>
-    <p v-if="isInvalid" class="ipt-desc">text</p>
+    <p v-if="isInvalid" class="ipt-desc">{{ invalidMessage }}</p>
   </div>
 </template>
 

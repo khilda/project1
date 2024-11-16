@@ -36,3 +36,13 @@
   font-size: 16px;
   font-weight: 400;
 }
+
+// required
+.required {
+  &:after {
+    content: "*";
+    margin-left: 5px;
+    line-height: 0;
+    color: $c-primary-red;
+  }
+}

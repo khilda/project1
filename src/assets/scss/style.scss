@@ -4,9 +4,16 @@
 
 @import "layouts/layouts";
 
-@import "components/title";
+@import "components/badge";
 @import "components/button";
+@import "components/icon";
 @import "components/input";
+@import "components/list";
 @import "components/table";
+@import "components/title";
 
+@import "pages/chat";
 @import "pages/email";
+@import "pages/product";
+@import "pages/qna";
+@import "pages/recommand";

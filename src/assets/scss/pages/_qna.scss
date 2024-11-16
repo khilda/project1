@@ -1,0 +1,41 @@
+//************************************
+//# qna
+//************************************
+.qna-view {
+  flex: 1;
+  border-radius: 7px;
+  .section-body {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 64px);
+  }
+  .type-table {
+    .scroll-list {
+      max-height: 258px;
+      .list-item {
+        border-top: 1px solid transparent;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+      }
+      .is-selected {
+        border: 1px solid $c-primary-red;
+        background-color: rgba($c-primary-red, 0.1);
+      }
+    }
+    .type-contents {
+      dt {
+        font-weight: 400;
+      }
+      dd {
+        color: $c-mid-gray1;
+      }
+    }
+  }
+  .type-solution {
+    overflow: hidden;
+    flex: 1;
+    .group-contents {
+      height: calc(100% - 30px);
+    }
+  }
+}

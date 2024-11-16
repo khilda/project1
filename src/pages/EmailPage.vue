@@ -3,9 +3,7 @@
     <!-- 이메일 -->
     <EmailView />
     <section class="l-column">
-      <!-- Product Infomation -->
-      <article class="pi-view"></article>
-      <!-- AI Q&A -->
+      <ProductInfomationView />
       <QnAView />
     </section>
     <!-- AI Recommendation -->
@@ -15,8 +13,10 @@
     </section>
   </div>
   <div class="btn-wrap align-right">
-    <ElButton size="lg">Chatbot</ElButton>
-    <ElButton type="primary" size="lg">Send Reply</ElButton>
+    <ElButton type="primary" size="lg">
+      <i class="ico-send"></i>
+      Send Reply
+    </ElButton>
   </div>
 </template>
 
@@ -24,6 +24,7 @@
 import ElButton from "@/components/elements/Button.vue";
 import ChatView from "@/components/module/ChatView.vue";
 import EmailView from "@/components/module/EmailView.vue";
+import ProductInfomationView from "@/components/module/ProductInfomationView.vue";
 import QnAView from "@/components/module/QnAView.vue";
 import AIRecommendView from "@/components/module/AIRecommendView.vue";
 </script>

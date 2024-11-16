@@ -1,0 +1,18 @@
+.scroll-list {
+  border-top: 1px solid $c-light-gray3;
+  border-bottom: 1px solid $c-light-gray3;
+  @include scroll;
+  .list-item {
+    display: block;
+    border-bottom: 1px solid $c-light-gray3;
+    width: 100%;
+    padding: 14px;
+    cursor: pointer;
+    &:last-child {
+      border-bottom: 0;
+    }
+    &.is-selected {
+      background-color: $c-light-gray1;
+    }
+  }
+}

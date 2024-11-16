@@ -1,0 +1,22 @@
+///************************************
+//# title icon
+//************************************
+.ico-title {
+  &::before {
+    content: "";
+    display: inline-block;
+    background: url("/src/assets/img/ico_title.svg") no-repeat 50% 50%;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+}
+
+.ico-send {
+  background: url("/src/assets/img/ico_btn_send.svg") no-repeat 50% 50%;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}

@@ -1,0 +1,10 @@
+//************************************
+//# recommend
+//************************************
+.recommend-view {
+  overflow: hidden;
+  .section-body {
+    display: flex;
+    flex-direction: column;
+  }
+}

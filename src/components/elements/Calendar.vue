@@ -3,22 +3,14 @@
     <div class="ipt-box" :class="getClass">
       <input
         v-model="model"
-        type="text"
+        type="date"
         class="ipt"
+        required
         :placeholder="placeholder"
         :disabled="disabled"
       />
-      <button
-        v-if="isSearch"
-        type="button"
-        class="ipt-btn"
-        :disabled="disabled"
-        @click="$emit('click-search', $event)"
-      >
-        검색
-      </button>
     </div>
-    <p v-if="isInvalid" class="ipt-desc">text</p>
+    <p v-if="isInvalid" class="ipt-desc">{{ invalidMessage }}</p>
   </div>
 </template>
 
@@ -26,10 +18,6 @@
 import { computed } from "vue";
 
 const props = defineProps({
-  isSearch: {
-    type: Boolean,
-    default: false,
-  },
   isInvalid: {
     type: Boolean,
     default: false,
@@ -44,7 +32,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: "",
+    default: "YYYY-MM-DD",
   },
 });
 

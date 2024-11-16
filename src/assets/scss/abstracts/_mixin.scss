@@ -186,16 +186,18 @@ $w-desktop: 1180px; // 1180 ~
 //************************************
 @mixin scroll {
   &::-webkit-scrollbar {
-    width: 12px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar-track {
-    background-color: $c-white;
+    background-color: transparent;
+    border-radius: 14px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: $c-mid-gray2;
-    border-radius: 8px;
-    border: 4px solid $c-white;
+    border-radius: 7px;
   }
 }

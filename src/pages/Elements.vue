@@ -1,6 +1,6 @@
 <template>
   <div class="guide-box">
-    <h3 class="sub-h2">button</h3>
+    <h3 class="sub-h2">Button</h3>
     <div class="row-box">
       <ElButton>Button Text</ElButton>
       <ElButton disabled>Button Text</ElButton>
@@ -28,10 +28,38 @@
     <ElInput v-model="input1" is-invalid />
   </div>
   <div class="guide-box">
-    <h3 class="sub-h2">select</h3>
+    <h3 class="sub-h2">Select</h3>
   </div>
   <div class="guide-box">
-    <h3 class="sub-h2">table</h3>
+    <h3 class="sub-h2">Checkbox:: {{ checkbox }}</h3>
+    <ElCheckbox
+      v-model="checkbox"
+      value="1"
+      :name="checkboxName"
+      label="Checkbox1"
+    />
+    <ElCheckbox
+      v-model="checkbox"
+      value="2"
+      :name="checkboxName"
+      label="Checkbox2"
+    />
+    <!-- Label을 Custom 할경우 -->
+    <ElCheckbox v-model="checkbox" value="3" :name="checkboxName" disabled>
+      <strong>Checkbox3</strong>
+    </ElCheckbox>
+  </div>
+  <div class="guide-box">
+    <h3 class="sub-h2">Radio:: {{ radio }}</h3>
+    <ElRadio v-model="radio" value="1" :name="radioName" label="Radio1" />
+    <ElRadio v-model="radio" value="2" :name="radioName" label="Radio2" />
+    <!-- Label을 Custom 할경우 -->
+    <ElRadio v-model="radio" value="3" :name="radioName" disabled>
+      <strong>Radio3</strong>
+    </ElRadio>
+  </div>
+  <div class="guide-box">
+    <h3 class="sub-h2">Table</h3>
     <table class="table">
       <thead>
         <tr>
@@ -62,11 +90,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import ElButton from "../components/elements/Button.vue";
-import ElInput from "../components/elements/Input.vue";
+import { onMounted, ref } from "vue";
+import ElButton from "@/components/elements/Button.vue";
+import ElInput from "@/components/elements/Input.vue";
+import ElCheckbox from "@/components/elements/Checkbox.vue";
+import ElRadio from "@/components/elements/Radio.vue";
+import { useGenerateId } from "@/composable/generateID";
 
 const input1 = ref("");
+
+const checkbox = ref(["1"]);
+const checkboxName = ref("");
+
+const radio = ref("1");
+const radioName = ref("");
 
 function clickSearchHandler(e) {
   console.log("검색버튼 클릭 : ", e);
@@ -74,6 +111,11 @@ function clickSearchHandler(e) {
 function clickBtnHandler(evt) {
   console.log("버튼 클릭 : ", evt);
 }
+
+onMounted(() => {
+  checkboxName.value = `checkbox_Name_${useGenerateId()}`;
+  radioName.value = `radio_Name_${useGenerateId()}`;
+});
 </script>
 
 <style scoped>
