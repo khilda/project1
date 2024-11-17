@@ -1,7 +1,9 @@
 import { createApp } from "vue";
+import App from "./App.vue";
+
 import router from "@/routers";
 import { createVfm } from "vue-final-modal";
-import App from "./App.vue";
+import clickOutside from "@/directive/clickOutside";
 
 // assets
 import "vue-final-modal/style.css";
@@ -13,5 +15,6 @@ const app = createApp(App);
 
 app.use(router);
 app.use(vfm);
+app.directive("click-outside", clickOutside);
 
 app.mount("#app");

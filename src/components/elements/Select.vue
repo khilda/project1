@@ -1,5 +1,9 @@
 <template>
-  <div class="el-select" :class="getClass">
+  <div
+    v-click-outside="clickOutsideHandler"
+    class="el-select"
+    :class="getClass"
+  >
     <button
       type="button"
       class="select-btn"
@@ -75,6 +79,9 @@ const getClass = computed(() => ({
 
 function clickValueHandler() {
   isOpen.value = !isOpen.value;
+}
+function clickOutsideHandler() {
+  isOpen.value = false;
 }
 function clickOptionHandler(value) {
   isOpen.value = false;
