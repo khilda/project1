@@ -1,0 +1,23 @@
+//************************************
+//# Page Call
+//************************************
+.page-call {
+  .l-layout {
+    position: relative;
+  }
+  .notification-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .notification .col {
+    gap: 14px;
+    font-size: inherit;
+    @include ellipsis();
+    p {
+      flex: 0 0 auto;
+      font-size: inherit;
+    }
+  }
+}

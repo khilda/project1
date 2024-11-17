@@ -1,0 +1,55 @@
+//************************************
+//# recommend
+//************************************
+.recommend-view {
+  overflow: hidden;
+  .section-header {
+    display: flex;
+    align-items: center;
+    .el-rating {
+      margin-left: auto;
+    }
+  }
+  .section-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+//************************************
+//# advice type
+//************************************
+.advice-item {
+  border-radius: 7px;
+  background-color: $c-white;
+  padding: 0 14px;
+  .advice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $c-mid-gray1;
+    padding: 14px 0;
+    .c-primary-color {
+      font-size: inherit;
+    }
+    .body-h3 {
+      margin-right: auto;
+    }
+  }
+  .advice-body {
+    position: relative;
+    padding: 14px 0 14px 24px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 0;
+      display: inline-block;
+      background: url("/src/assets/img/ico_check.svg") no-repeat 50% 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 0;
+    }
+  }
+}

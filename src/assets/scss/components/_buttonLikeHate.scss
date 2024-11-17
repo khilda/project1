@@ -1,0 +1,41 @@
+//************************************
+//# like hate Button
+//************************************
+.el-likeHate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  .ico-like {
+    flex: 0 0 auto;
+    display: inline-block;
+    background: url("/src/assets/img/ico_btn_like_off.svg") no-repeat 50% 50% /
+      cover;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+  }
+  .ico-hate {
+    flex: 0 0 auto;
+    display: inline-block;
+    background: url("/src/assets/img/ico_btn_hate_off.svg") no-repeat 50% 50% /
+      cover;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+  }
+  .btn-like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+  }
+  .is-active {
+    .ico-like {
+      background-image: url("/src/assets/img/ico_btn_like_on.svg");
+    }
+    .ico-hate {
+      background-image: url("/src/assets/img/ico_btn_hate_on.svg");
+    }
+  }
+}

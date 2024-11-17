@@ -2,21 +2,41 @@
 //# title icon
 //************************************
 .ico-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   &::before {
     content: "";
     display: inline-block;
-    background: url("/src/assets/img/ico_title.svg") no-repeat 50% 50%;
+    background: url("/src/assets/img/ico_title.svg") no-repeat 50% 50% / cover;
     width: 24px;
     height: 24px;
-    margin-right: 5px;
-    vertical-align: middle;
   }
 }
-
+.ico-check {
+  flex: 0 0 auto;
+  display: inline-block;
+  background: url("/src/assets/img/ico_check.svg") no-repeat 50% 50% / cover;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+}
 .ico-send {
-  background: url("/src/assets/img/ico_btn_send.svg") no-repeat 50% 50%;
+  flex: 0 0 auto;
+  display: inline-block;
+  background: url("/src/assets/img/ico_btn_send.svg") no-repeat 50% 50% / cover;
   width: 30px;
   height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.ico-counselling {
+  flex: 0 0 auto;
+  display: inline-block;
+  background: url("/src/assets/img/ico_btn_counselling.svg") no-repeat 50% 50% /
+    cover;
+  width: 40px;
+  height: 40px;
   vertical-align: middle;
   margin-right: 10px;
 }

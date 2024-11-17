@@ -6,15 +6,24 @@
 
 @import "components/badge";
 @import "components/button";
+@import "components/buttonLikeHate";
 @import "components/icon";
 @import "components/input";
 @import "components/list";
+@import "components/notification";
 @import "components/popup";
+@import "components/rating";
 @import "components/table";
 @import "components/title";
 
-@import "pages/chat";
-@import "pages/email";
-@import "pages/product";
-@import "pages/qna";
-@import "pages/recommand";
+@import "module/chat";
+@import "module/conversation";
+@import "module/counselling";
+@import "module/email";
+@import "module/product";
+@import "module/qna";
+@import "module/recommand";
+@import "module/summary";
+
+@import "page/call";
+@import "page/email";

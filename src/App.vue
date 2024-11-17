@@ -1,11 +1,7 @@
-<script setup>
-import Wrapper from "@/layouts/Wrapper.vue";
-</script>
+<script setup></script>
 
 <template>
-  <Wrapper>
-    <router-view />
-  </Wrapper>
+  <router-view />
 </template>
 
 <style scoped></style>

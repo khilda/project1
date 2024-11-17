@@ -1,0 +1,114 @@
+//************************************
+//# Conversation
+//************************************
+.conversation-view {
+  .section-header {
+    .col {
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .col-inner-group .body-h3 {
+      margin-bottom: 5px;
+    }
+    .col-inner-group:first-child {
+      flex: 0 1 155px;
+    }
+    .col-inner-group:last-child {
+      flex: 2 1 410px;
+    }
+  }
+  .header-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .timer {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &::before {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        background-color: $c-mid-gray1;
+        width: 8px;
+        height: 8px;
+      }
+      &.on::before {
+        background-color: $c-primary-red;
+      }
+    }
+  }
+}
+.call-contents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 7px;
+  .call-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .call-user {
+      position: absolute;
+      top: 0;
+      color: $c-mid-gray2;
+      text-align: center;
+      &::before {
+        content: "";
+        display: block;
+        background: no-repeat 50% 50% / cover;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+    }
+    .call-text {
+      border-radius: 7px;
+      padding: 14px;
+      color: $c-mid-gray2;
+    }
+    &.type-receive {
+      padding-left: 42px;
+      .call-user {
+        left: 0;
+        &::before {
+          background-image: url("/src/assets/img/ico_call_user.svg");
+        }
+      }
+      .call-text {
+        align-self: flex-start;
+        background-color: $c-white;
+      }
+      .call-info {
+        justify-content: flex-start;
+      }
+    }
+    &.type-send {
+      padding-right: 42px;
+      .call-user {
+        right: 0;
+        &::before {
+          background-image: url("/src/assets/img/ico_call_advisor.svg");
+        }
+      }
+      .call-text {
+        align-self: flex-end;
+        background-color: $c-light-gray3;
+        text-align: right;
+      }
+      .call-info {
+        justify-content: flex-end;
+      }
+    }
+    .call-info {
+      display: flex;
+      gap: 4px;
+      .date {
+        color: $c-mid-gray1;
+      }
+    }
+  }
+}

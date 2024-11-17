@@ -1,0 +1,58 @@
+//************************************
+//# Counselling
+//************************************
+.counselling-view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $c-primary-gray;
+  width: 608px;
+  height: 100%;
+  z-index: 10;
+  .section-header {
+    display: flex;
+    align-items: center;
+    background-color: $c-mid-gray3;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    .ico-counselling {
+      width: 24px;
+      height: 24px;
+    }
+    .body-h1 {
+      margin-right: auto;
+      color: $c-white;
+    }
+  }
+  .content-group + .content-group {
+    margin-top: 14px;
+  }
+  .type-call {
+    .col {
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+  }
+  .type-table .group-contents {
+    max-height: 130px;
+  }
+}
+.counselling-recommend {
+  border-radius: 7px;
+  background-color: $c-light-gray1;
+  padding: 18px;
+  margin-top: 18px;
+  .col {
+    align-items: center;
+    gap: 8px;
+    .body-h1 {
+      margin-right: auto;
+    }
+    .el-ipt {
+      width: 180px;
+    }
+  }
+  .btn-wrap {
+    margin-top: 14px;
+  }
+}

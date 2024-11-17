@@ -4,7 +4,7 @@
 <template>
   <article class="l-section chat-view" :class="{ 'is-open': isOpen }">
     <header class="section-header">
-      <span class="ico-title">Agent Question</span>
+      <span class="body-h1 ico-title">Agent Question</span>
       <button type="button" class="btn-toggle" @click="clickToggleHandler">
         Toggle
       </button>

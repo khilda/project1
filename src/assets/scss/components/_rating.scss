@@ -1,0 +1,21 @@
+.el-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  .ico-star {
+    flex: 0 0 auto;
+    display: inline-block;
+    background: url("/src/assets/img/ico_btn_star_off.svg") no-repeat 50% 50% /
+      cover;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+  }
+  .btn-rating {
+    width: 24px;
+    height: 24px;
+    &.is-active .ico-star {
+      background-image: url("/src/assets/img/ico_btn_star_on.svg");
+    }
+  }
+}

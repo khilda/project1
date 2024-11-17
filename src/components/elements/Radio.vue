@@ -9,7 +9,11 @@
       :name="name"
       :disabled="disabled"
     />
-    <label :for="uuid" class="radio-label">
+    <label
+      :for="uuid"
+      class="radio-label"
+      :class="{ 'is-checked': isSelected }"
+    >
       <slot>
         {{ label }}
       </slot>
@@ -48,6 +52,9 @@ const props = defineProps({
 });
 
 const model = defineModel();
+const isSelected = computed(() => {
+  return props.value === model.value;
+});
 
 const type = {
   default: "",

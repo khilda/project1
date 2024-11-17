@@ -32,6 +32,7 @@ defineEmits(["click"]);
 const type = {
   default: "",
   primary: "type-primary",
+  gray: "type-gray",
   form: "type-form",
 };
 const size = {

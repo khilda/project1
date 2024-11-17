@@ -62,12 +62,6 @@
     .chat-info {
       display: flex;
       gap: 4px;
-      .ico-check {
-        background: url("/src/assets/img/ico_check.svg") no-repeat 50% 50%;
-        width: 20px;
-        height: 20px;
-        font-size: 0;
-      }
       .date {
         color: $c-mid-gray1;
       }

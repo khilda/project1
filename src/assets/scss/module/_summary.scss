@@ -1,0 +1,52 @@
+//************************************
+//# Session Summary
+//************************************
+.summary-view {
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .btn-pin {
+    background: url("/src/assets/img/ico_btn_pin_off.svg") no-repeat 50% 50% /
+      cover;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    margin-left: auto;
+    &.is-active {
+      background-image: url("/src/assets/img/ico_btn_pin_on.svg");
+    }
+  }
+  .section-body {
+    background-color: $c-white;
+    padding: 0 12px 12px;
+  }
+  .scroll {
+    max-height: 316px;
+    border-radius: 7px;
+    background-color: $c-light-gray1;
+    padding: 14px;
+  }
+}
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  .type-contents {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    border-left: 1px solid $c-mid-gray1;
+    padding: 10px;
+    .ico-check {
+      display: none;
+    }
+  }
+  .is-checked .type-contents {
+    border-left-width: 2px;
+    border-left-color: $c-primary-red;
+    .ico-check {
+      display: inline-block;
+    }
+  }
+}

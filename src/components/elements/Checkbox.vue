@@ -9,11 +9,15 @@
       :name="name"
       :disabled="disabled"
     />
-    <slot :id="uuid">
-      <label :for="uuid" class="checkbox-label">
+    <label
+      :for="uuid"
+      class="checkbox-label"
+      :class="{ 'is-checked': isSelected }"
+    >
+      <slot :id="uuid">
         {{ label }}
-      </label>
-    </slot>
+      </slot>
+    </label>
   </span>
 </template>
 
@@ -49,6 +53,9 @@ const props = defineProps({
 });
 
 const model = defineModel();
+const isSelected = computed(() => {
+  return model.value.includes(props.value);
+});
 
 const size = {
   default: "",

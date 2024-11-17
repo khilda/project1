@@ -1,133 +1,162 @@
 <template>
-  <div class="guide-box">
-    <h3 class="sub-h2">Menu link</h3>
-    <div class="row-box">
-      <ElButton @click="$router.push('/email')">Email Page</ElButton>
-      <ElButton @click="$router.push('/call')">Call Page</ElButton>
+  <main class="l-wrapper page-email">
+    <div class="guide-box">
+      <h3 class="sub-h2">Menu link</h3>
+      <div class="row-box">
+        <ElButton @click="$router.push('/email')">Email Page</ElButton>
+        <ElButton @click="$router.push('/call')">Call Page</ElButton>
+      </div>
     </div>
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">Button</h3>
-    <div class="row-box">
-      <ElButton>Button Text</ElButton>
-      <ElButton disabled>Button Text</ElButton>
-      <ElButton type="primary">Button Text</ElButton>
-      <ElButton type="primary" disabled>Button Text</ElButton>
+    <!---------------------------------------------
+    # Button
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Button</h3>
+      <div class="row-box">
+        <ElButton>Button Text</ElButton>
+        <ElButton disabled>Button Text</ElButton>
+        <ElButton type="primary">Button Text</ElButton>
+        <ElButton type="primary" disabled>Button Text</ElButton>
+      </div>
+      <div class="row-box">
+        <ElButton size="md">Button Text</ElButton>
+        <ElButton size="md" disabled>Button Text</ElButton>
+        <ElButton type="primary" size="md">Button Text</ElButton>
+        <ElButton type="primary" size="md" disabled>Button Text</ElButton>
+      </div>
+      <div class="row-box">
+        <ElButton size="lg">Button Text</ElButton>
+        <ElButton size="lg" disabled>Button Text</ElButton>
+        <ElButton type="primary" size="lg">Button Text</ElButton>
+        <ElButton type="primary" size="lg" disabled>Button Text</ElButton>
+      </div>
     </div>
-    <div class="row-box">
-      <ElButton size="md">Button Text</ElButton>
-      <ElButton size="md" disabled>Button Text</ElButton>
-      <ElButton type="primary" size="md">Button Text</ElButton>
-      <ElButton type="primary" size="md" disabled>Button Text</ElButton>
+    <!---------------------------------------------
+    # Rating
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Rating</h3>
+      <div class="row-box">
+        <ElRating v-model="rating" />
+      </div>
     </div>
-    <div class="row-box">
-      <ElButton size="lg">Button Text</ElButton>
-      <ElButton size="lg" disabled>Button Text</ElButton>
-      <ElButton type="primary" size="lg">Button Text</ElButton>
-      <ElButton type="primary" size="lg" disabled>Button Text</ElButton>
+    <!---------------------------------------------
+    # Selected Btn
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Rating</h3>
+      <div class="row-box"></div>
     </div>
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">input</h3>
-    <ElInput v-model="input1" placeholder="placeholder" />
-    <ElInput v-model="input1" is-search disabled />
-    <ElInput v-model="input1" is-search @click-search="clickSearchHandler" />
-    <ElInput v-model="input1" is-invalid />
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">Select</h3>
-    <ElSelect v-model="select" :options="options" />
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">Checkbox:: {{ checkbox }}</h3>
-    <ElCheckbox
-      v-model="checkbox"
-      value="1"
-      :name="checkboxName"
-      label="Checkbox1"
-    />
-    <ElCheckbox
-      v-model="checkbox"
-      value="2"
-      :name="checkboxName"
-      label="Checkbox2"
-    />
-    <!-- Label을 Custom 할경우 -->
-    <ElCheckbox v-model="checkbox" value="3" :name="checkboxName" disabled>
-      <strong>Checkbox3</strong>
-    </ElCheckbox>
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">Radio:: {{ radio }}</h3>
-    <ElRadio v-model="radio" value="1" :name="radioName" label="Radio1" />
-    <ElRadio v-model="radio" value="2" :name="radioName" label="Radio2" />
-    <!-- Label을 Custom 할경우 -->
-    <ElRadio v-model="radio" value="3" :name="radioName" disabled>
-      <strong>Radio3</strong>
-    </ElRadio>
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">Table</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Symptom</th>
-          <th>Sub Symprom1</th>
-          <th>Sub Symprom2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>REF</td>
-          <td>Door Issues</td>
-          <td>Lorem ipsum dolor,</td>
-        </tr>
-        <tr>
-          <td>REF</td>
-          <td>Door Issues</td>
-          <td>Lorem ipsum dolor,</td>
-        </tr>
-        <tr>
-          <td>REF</td>
-          <td>Door Issues</td>
-          <td>Lorem ipsum dolor,</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">Scroll List</h3>
-    <ElScrollList :list="scrollList" is-select>
-      <template v-slot="{ item }">
-        <span>{{ item.dep1 }}</span>
-        <span>{{ item.dep2 }}</span>
-      </template>
-    </ElScrollList>
-  </div>
-  <div class="guide-box">
-    <h3 class="sub-h2">Popup</h3>
-    <div class="row-box">
-      <ElButton @click="clickPopupOpenHandler">Popup Open</ElButton>
-      <PopupSymptomType v-model="isPopupOpen" @get-data="updatePopupHandler" />
-      <p>Popup Return Value : {{ popupData }}</p>
-
-      <!-- <ElPopup v-model="isPopupOpen" title="header title">
-        <template #container>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae,
-            molestias? Fuga earum dolorem expedita a porro iusto sequi harum? Ea
-            eaque porro vero recusandae corrupti perspiciatis officia dolores
-            velit soluta.
-            <ElInput v-model="input1" placeholder="placeholder" />
-          </p>
+    <!---------------------------------------------
+    # Input
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">input</h3>
+      <ElInput v-model="input1" placeholder="placeholder" />
+      <ElInput v-model="input1" is-search disabled />
+      <ElInput v-model="input1" is-search @click-search="clickSearchHandler" />
+      <ElInput v-model="input1" is-invalid />
+    </div>
+    <!---------------------------------------------
+    # Select
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Select</h3>
+      <ElSelect v-model="select" :options="options" />
+    </div>
+    <!---------------------------------------------
+    # Checkbox
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Checkbox:: {{ checkbox }}</h3>
+      <ElCheckbox
+        v-model="checkbox"
+        value="1"
+        :name="checkboxName"
+        label="Checkbox1"
+      />
+      <ElCheckbox
+        v-model="checkbox"
+        value="2"
+        :name="checkboxName"
+        label="Checkbox2"
+      />
+      <!-- Label을 Custom 할경우 -->
+      <ElCheckbox v-model="checkbox" value="3" :name="checkboxName" disabled>
+        <strong>Checkbox3</strong>
+      </ElCheckbox>
+    </div>
+    <!---------------------------------------------
+    # Radio
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Radio:: {{ radio }}</h3>
+      <ElRadio v-model="radio" value="1" :name="radioName" label="Radio1" />
+      <ElRadio v-model="radio" value="2" :name="radioName" label="Radio2" />
+      <!-- Label을 Custom 할경우 -->
+      <ElRadio v-model="radio" value="3" :name="radioName" disabled>
+        <strong>Radio3</strong>
+      </ElRadio>
+    </div>
+    <!---------------------------------------------
+    # Table
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Table</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Symptom</th>
+            <th>Sub Symprom1</th>
+            <th>Sub Symprom2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>REF</td>
+            <td>Door Issues</td>
+            <td>Lorem ipsum dolor,</td>
+          </tr>
+          <tr>
+            <td>REF</td>
+            <td>Door Issues</td>
+            <td>Lorem ipsum dolor,</td>
+          </tr>
+          <tr>
+            <td>REF</td>
+            <td>Door Issues</td>
+            <td>Lorem ipsum dolor,</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!---------------------------------------------
+    # Scroll List
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Scroll List</h3>
+      <ElScrollList :list="scrollList" is-select>
+        <template v-slot="{ item }">
+          <span>{{ item.dep1 }}</span>
+          <span>{{ item.dep2 }}</span>
         </template>
-        <template #footer>
-          <ElButton @click="clickPopupCloseHandler">취소</ElButton>
-          <ElButton type="primary" @click="updatePopupHandler"> 확인 </ElButton>
-        </template>
-      </ElPopup> -->
+      </ElScrollList>
     </div>
-  </div>
+    <!---------------------------------------------
+    # Popup
+    ----------------------------------------------->
+    <div class="guide-box">
+      <h3 class="sub-h2">Popup</h3>
+      <div class="row-box">
+        <ElButton @click="clickPopupOpenHandler">Popup Open</ElButton>
+        <PopupSymptomType
+          v-model="isPopupOpen"
+          @get-data="updatePopupHandler"
+        />
+        <p>Popup Return Value : {{ popupData }}</p>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script setup>
@@ -138,7 +167,7 @@ import ElSelect from "@/components/elements/Select.vue";
 import ElCheckbox from "@/components/elements/Checkbox.vue";
 import ElRadio from "@/components/elements/Radio.vue";
 import ElScrollList from "@/components/elements/ScrollList.vue";
-import ElPopup from "@/components/elements/Popup.vue";
+import ElRating from "@/components/elements/Rating.vue";
 import PopupSymptomType from "@/components/module/PopupSymptomType.vue";
 import { useGenerateId } from "@/composable/generateID";
 
@@ -156,6 +185,8 @@ const checkboxName = ref("");
 
 const radio = ref("1");
 const radioName = ref("");
+
+const rating = ref(1);
 
 const scrollList = [
   { dep1: "REF", dep2: "Refrigerator" },

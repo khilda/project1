@@ -4,7 +4,7 @@
 <template>
   <article class="l-section qna-view">
     <header class="section-header">
-      <span class="ico-title">AI Q&A</span>
+      <span class="body-h1 ico-title">AI Q&A</span>
     </header>
     <div class="section-body">
       <div class="content-group type-table">
@@ -18,10 +18,10 @@
             검색
           </button>
         </div>
-        <div class="group-contents">
+        <div class="group-contents scroll">
           <ElScrollList :list="scrollList">
             <template v-slot="{ item }">
-              <ElRadio v-model="radio" :value="item.value">
+              <ElRadio v-model="radio" :value="item.value" :name="radioName">
                 <dl class="type-contents">
                   <dd>{{ item.dep1 }}</dd>
                   <dt>{{ item.dep2 }}</dt>

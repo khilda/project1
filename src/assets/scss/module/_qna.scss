@@ -1,0 +1,68 @@
+//************************************
+//# qna
+//************************************
+.qna-view {
+  flex: 1;
+  border-radius: 7px;
+  .section-body {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 64px);
+  }
+  .content-group + .content-group {
+    margin-top: 24px;
+  }
+}
+.type-table {
+  .col {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .group-contents {
+    max-height: 258px;
+  }
+  .scroll-list {
+    .list-item {
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
+    .is-selected {
+      border: 1px solid $c-primary-red;
+      background-color: rgba($c-primary-red, 0.1);
+    }
+  }
+  .type-contents {
+    dt {
+      font-weight: 400;
+    }
+    dd {
+      color: $c-mid-gray1;
+    }
+  }
+}
+.type-solution {
+  overflow: hidden;
+  flex: 1;
+  .group-contents {
+    height: calc(100% - 30px);
+  }
+}
+//************************************
+//# Popup Symptom Popup
+//************************************
+.pop-symptom {
+  width: 840px;
+  .col {
+    gap: 12px;
+  }
+  .content-group {
+    flex: 1;
+  }
+  .scroll-list {
+    height: 300px;
+  }
+  .btn-wrap {
+    width: 100%;
+  }
+}
