@@ -33,6 +33,7 @@
   .section-body {
     flex: 1;
     background-color: $c-light-gray1;
+    height: calc(100% - 66px);
     padding: 18px;
   }
 }

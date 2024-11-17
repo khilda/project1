@@ -17,18 +17,24 @@
         <ElButton disabled>Button Text</ElButton>
         <ElButton type="primary">Button Text</ElButton>
         <ElButton type="primary" disabled>Button Text</ElButton>
+        <ElButton type="gray">Button Text</ElButton>
+        <ElButton type="gray" disabled>Button Text</ElButton>
       </div>
       <div class="row-box">
         <ElButton size="md">Button Text</ElButton>
         <ElButton size="md" disabled>Button Text</ElButton>
         <ElButton type="primary" size="md">Button Text</ElButton>
         <ElButton type="primary" size="md" disabled>Button Text</ElButton>
+        <ElButton type="gray" size="md">Button Text</ElButton>
+        <ElButton type="gray" size="md" disabled>Button Text</ElButton>
       </div>
       <div class="row-box">
         <ElButton size="lg">Button Text</ElButton>
         <ElButton size="lg" disabled>Button Text</ElButton>
         <ElButton type="primary" size="lg">Button Text</ElButton>
         <ElButton type="primary" size="lg" disabled>Button Text</ElButton>
+        <ElButton type="gray" size="lg">Button Text</ElButton>
+        <ElButton type="gray" disabled size="lg">Button Text</ElButton>
       </div>
     </div>
     <!---------------------------------------------
@@ -44,14 +50,23 @@
     # Selected Btn
     ----------------------------------------------->
     <div class="guide-box">
-      <h3 class="sub-h2">Rating</h3>
-      <div class="row-box"></div>
+      <h3 class="sub-h2">Button Like or Hate</h3>
+      <div class="row-box">
+        <ElButtonLikeHate v-model="favoriteValue" />
+      </div>
     </div>
     <!---------------------------------------------
     # Input
     ----------------------------------------------->
     <div class="guide-box">
       <h3 class="sub-h2">input</h3>
+      <ElInput v-model="input1" placeholder="placeholder" />
+      <ElInput v-model="input1" is-search disabled />
+      <ElInput v-model="input1" is-search @click-search="clickSearchHandler" />
+      <ElInput v-model="input1" is-invalid />
+    </div>
+    <div class="guide-box">
+      <h3 class="sub-h2">input:date</h3>
       <ElInput v-model="input1" placeholder="placeholder" />
       <ElInput v-model="input1" is-search disabled />
       <ElInput v-model="input1" is-search @click-search="clickSearchHandler" />
@@ -167,6 +182,7 @@ import ElSelect from "@/components/elements/Select.vue";
 import ElCheckbox from "@/components/elements/Checkbox.vue";
 import ElRadio from "@/components/elements/Radio.vue";
 import ElScrollList from "@/components/elements/ScrollList.vue";
+import ElButtonLikeHate from "@/components/elements/ButtonLikeHate.vue";
 import ElRating from "@/components/elements/Rating.vue";
 import PopupSymptomType from "@/components/module/PopupSymptomType.vue";
 import { useGenerateId } from "@/composable/generateID";
@@ -187,6 +203,7 @@ const radio = ref("1");
 const radioName = ref("");
 
 const rating = ref(1);
+const favoriteValue = ref(undefined);
 
 const scrollList = [
   { dep1: "REF", dep2: "Refrigerator" },

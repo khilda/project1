@@ -7,7 +7,6 @@
   .section-body {
     display: flex;
     flex-direction: column;
-    height: calc(100% - 64px);
   }
   .content-group + .content-group {
     margin-top: 24px;
