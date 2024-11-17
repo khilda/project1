@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  width: 608px;
+  width: calc(33.3333vw - 32px);
   height: 100%;
   z-index: 10;
   .section-header {
