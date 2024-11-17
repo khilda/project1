@@ -11,7 +11,7 @@
       <button
         v-if="isSearch"
         type="button"
-        class="ipt-btn-search"
+        class="btn-search"
         :disabled="disabled"
         @click="$emit('click-search', $event)"
       >

@@ -1,3 +1,6 @@
+<!--
+# 이메일 : Agent Question 채팅
+-->
 <template>
   <article class="l-section chat-view" :class="{ 'is-open': isOpen }">
     <header class="section-header">

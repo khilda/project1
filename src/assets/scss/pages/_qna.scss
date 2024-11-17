@@ -9,7 +9,14 @@
     flex-direction: column;
     height: calc(100% - 64px);
   }
+  .content-group + .content-group {
+    margin-top: 24px;
+  }
   .type-table {
+    .col {
+      align-items: center;
+      justify-content: space-between;
+    }
     .scroll-list {
       max-height: 258px;
       .list-item {
@@ -37,5 +44,23 @@
     .group-contents {
       height: calc(100% - 30px);
     }
+  }
+}
+//************************************
+//# Popup Symptom Popup
+//************************************
+.pop-symptom {
+  width: 840px;
+  .col {
+    gap: 12px;
+  }
+  .content-group {
+    flex: 1;
+  }
+  .scroll-list {
+    height: 300px;
+  }
+  .btn-wrap {
+    width: 100%;
   }
 }

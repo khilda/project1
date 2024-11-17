@@ -51,3 +51,16 @@
 .is-open .btn-toggle {
   transform: rotate(180deg);
 }
+
+//************************************
+//# Icon Button
+//************************************
+
+.btn-search {
+  background: url("/src/assets/img/ico_search.svg") no-repeat 50% 50%;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  color: transparent;
+}

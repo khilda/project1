@@ -1,7 +1,9 @@
 .scroll-list {
   border-top: 1px solid $c-light-gray3;
   border-bottom: 1px solid $c-light-gray3;
-  @include scroll;
+  .scroll {
+    height: 100%;
+  }
   .list-item {
     display: block;
     border-bottom: 1px solid $c-light-gray3;

@@ -1,3 +1,6 @@
+<!--
+# 이메일 : Product Infomation 상품선택 항목
+-->
 <template>
   <article class="pi-view" :class="{ 'is-open': isOpen }">
     <header class="pi-header">

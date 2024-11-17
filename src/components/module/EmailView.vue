@@ -1,3 +1,6 @@
+<!--
+# 이메일 : 이메일을 보여주는 영역
+-->
 <template>
   <section class="l-section l-email">
     <header class="email-header">

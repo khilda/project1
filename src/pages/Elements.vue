@@ -1,5 +1,12 @@
 <template>
   <div class="guide-box">
+    <h3 class="sub-h2">Menu link</h3>
+    <div class="row-box">
+      <ElButton @click="$router.push('/email')">Email Page</ElButton>
+      <ElButton @click="$router.push('/call')">Call Page</ElButton>
+    </div>
+  </div>
+  <div class="guide-box">
     <h3 class="sub-h2">Button</h3>
     <div class="row-box">
       <ElButton>Button Text</ElButton>
@@ -88,6 +95,39 @@
       </tbody>
     </table>
   </div>
+  <div class="guide-box">
+    <h3 class="sub-h2">Scroll List</h3>
+    <ElScrollList :list="scrollList" is-select>
+      <template v-slot="{ item }">
+        <span>{{ item.dep1 }}</span>
+        <span>{{ item.dep2 }}</span>
+      </template>
+    </ElScrollList>
+  </div>
+  <div class="guide-box">
+    <h3 class="sub-h2">Popup</h3>
+    <div class="row-box">
+      <ElButton @click="clickPopupOpenHandler">Popup Open</ElButton>
+      <PopupSymptomType v-model="isPopupOpen" @get-data="updatePopupHandler" />
+      <p>Popup Return Value : {{ popupData }}</p>
+
+      <!-- <ElPopup v-model="isPopupOpen" title="header title">
+        <template #container>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae,
+            molestias? Fuga earum dolorem expedita a porro iusto sequi harum? Ea
+            eaque porro vero recusandae corrupti perspiciatis officia dolores
+            velit soluta.
+            <ElInput v-model="input1" placeholder="placeholder" />
+          </p>
+        </template>
+        <template #footer>
+          <ElButton @click="clickPopupCloseHandler">취소</ElButton>
+          <ElButton type="primary" @click="updatePopupHandler"> 확인 </ElButton>
+        </template>
+      </ElPopup> -->
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -97,6 +137,9 @@ import ElInput from "@/components/elements/Input.vue";
 import ElSelect from "@/components/elements/Select.vue";
 import ElCheckbox from "@/components/elements/Checkbox.vue";
 import ElRadio from "@/components/elements/Radio.vue";
+import ElScrollList from "@/components/elements/ScrollList.vue";
+import ElPopup from "@/components/elements/Popup.vue";
+import PopupSymptomType from "@/components/module/PopupSymptomType.vue";
 import { useGenerateId } from "@/composable/generateID";
 
 const input1 = ref("");
@@ -114,11 +157,44 @@ const checkboxName = ref("");
 const radio = ref("1");
 const radioName = ref("");
 
+const scrollList = [
+  { dep1: "REF", dep2: "Refrigerator" },
+  { dep1: "TV", dep2: "TV" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "TLV", dep2: "LCD TV(33 and over)" },
+  { dep1: "TLV", dep2: "LCD TV(33 and over)" },
+  { dep1: "TLV", dep2: "LCD TV(33 and over)" },
+  { dep1: "TLV", dep2: "LCD TV(33 and over)" },
+  { dep1: "TLV", dep2: "LCD TV(33 and over)" },
+  { dep1: "TLV", dep2: "LCD TV(33 and over)" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "WM", dep2: "Washing Machine" },
+  { dep1: "WM", dep2: "Washing Machine" },
+];
+
 function clickSearchHandler(e) {
   console.log("검색버튼 클릭 : ", e);
 }
 function clickBtnHandler(evt) {
   console.log("버튼 클릭 : ", evt);
+}
+// Popup
+const isPopupOpen = ref(false);
+const popupData = ref("");
+function clickPopupOpenHandler() {
+  isPopupOpen.value = true;
+}
+function clickPopupCloseHandler() {
+  isPopupOpen.value = false;
+}
+function updatePopupHandler(data) {
+  isPopupOpen.value = false;
+  popupData.value = data;
 }
 
 onMounted(() => {
@@ -132,10 +208,14 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: 20px 0;
 }
 .row-box {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+.scroll-list {
+  height: 300px;
 }
 </style>

@@ -1,12 +1,11 @@
 .l-wrapper {
   padding: 24px;
-  height: 100vh;
 }
 .l-layout {
   display: flex;
   gap: 24px;
   align-items: flex-start;
-  height: calc(100vh - 132px);
+  height: calc(100vh - 138px);
   & + .btn-wrap {
     margin-top: 20px;
   }
@@ -59,11 +58,16 @@
     border-radius: 7px;
     padding: 14px;
   }
-  & + .content-group {
-    margin-top: 24px;
-  }
 }
 
+//************************************
+//# flex
+//************************************
+.row {
+}
+.col {
+  display: flex;
+}
 //************************************
 //# btn-wrap
 //************************************

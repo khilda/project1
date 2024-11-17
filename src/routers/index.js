@@ -11,8 +11,8 @@ export default createRouter({
       component: () => import("@/pages/EmailPage.vue"),
     },
     {
-      path: "/module",
-      component: () => import("@/pages/Module.vue"),
+      path: "/call",
+      component: () => import("@/pages/CallPage.vue"),
     },
   ],
 });

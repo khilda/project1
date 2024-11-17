@@ -1,13 +1,16 @@
 <!--
-# 이메일 : AI Recommendation Textarea
+# Call : AI Recommendation Advice 항목
 -->
 <template>
   <article class="l-section recommend-view">
     <header class="section-header ico-title">AI Recommendation</header>
     <div class="section-body">
-      <div class="textarea-view">
-        <textarea class="textarea" v-model="textarea"></textarea>
-      </div>
+      <dl class="advice">
+        <dt>
+          <strong>Advice 01</strong>
+          <span>Check Network Connection</span>
+        </dt>
+      </dl>
     </div>
   </article>
 </template>
